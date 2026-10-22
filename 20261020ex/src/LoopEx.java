@@ -177,6 +177,30 @@ public class LoopEx {
 			
 			
 		}
+		
+		/*
+		 * *(에스탈리크)로 트리만들기
+		 */
+		
+		int treeTop = 10;
+		for (int i = 1; i <= treeTop; i++) {
+			
+			for (int j = 0; j < treeTop - i; j++) {
+				System.out.print(" ");
+			}
+			
+			for (int k = 0; k < i; k++) {
+				System.out.print("*");
+			}
+			
+			for (int j = 1; j < i; j++ ) {
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+		
+		
 	}
 
 }
