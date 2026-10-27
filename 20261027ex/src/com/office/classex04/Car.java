@@ -25,11 +25,18 @@ public class Car {
 	}
 	
 	// 메서드
-	public void goForward() {     // 접근제한자 반환형 메서드명() {}
+	// int speed : parameter, 매개변수-호출부와 선언부의 관계를 이어줘서 '매개'
+	public void goForward(int speed) {     // 접근제한자 반환형 메서드명() {}
 		System.out.println("--- goForward() method ---");
+		System.out.println(speed + "km/h");
 	}
 
 	public void goBack() {
 		System.out.println("--- goBack() method ---");
+	}
+	
+	public void doTest() {
+		goForward(30);  // == this.goForward();
+		goBack();     // == this.goBack();
 	}
 }
