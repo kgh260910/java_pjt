@@ -15,6 +15,10 @@ public class NewStudent {
 	 *  데이터타입 갯수와 종류가 달라야 합니다.
 	 */
 	// 생성자
+	public NewStudent() {
+		
+	}
+	
 	public NewStudent(int grade, int classNo, int studentNo, String studentName, boolean absence) {
 		this.grade = grade;
 		this.classNo = classNo;

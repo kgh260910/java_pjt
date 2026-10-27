@@ -12,8 +12,6 @@ public class MainClass {
 		newStudent1.printInfo();
 		newStudent2.printInfo();
 		
-		
-		
 		NewStudent newStudent3 = new NewStudent(2, 8, "박세리");  // 1,2,8,"박세리",false
 		newStudent3.printInfo();
 		
@@ -23,7 +21,9 @@ public class MainClass {
 		
 		NewStudent newStudent5 = new NewStudent(5, 4, "김연경");
 		newStudent5.printInfo();
-
+		
+		NewStudent newStudent6 = new NewStudent();
+		newStudent6.printInfo();
 	}
 
 }
