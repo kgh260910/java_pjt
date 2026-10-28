@@ -8,7 +8,15 @@ public class MainClass {
 		
 		Scanner scanner = new Scanner(System.in);
 		boolean systemFlag = true;
-		MemberService memberService = new MemberService(new MemberDB());
+		
+		MemberDB memberDB = new MemberDB();
+		MemberService memberService = new MemberService(memberDB);
+		MemberDumy memberDumy = new MemberDumy(memberDB);
+		memberDumy.initMemberDumyData();
+		
+		/*
+		 * 과제: 더미 데이터 초기화는 개발환경과 실환경으로 구분해야 한다.
+		 */
 		
 		while (true) {
 			
@@ -30,9 +38,13 @@ public class MainClass {
 				
 			case 3: 			// MODIFY
 				
+				memberService.doModify(scanner);
+				
 				break;
 				
 			case 4: 			// DELETE
+				
+				memberService.doDelete(scanner);
 	
 				break;
 	
@@ -41,7 +53,11 @@ public class MainClass {
 				System.out.println("Say Good bye~");
 	
 				break;
-				
+			
+			/*
+			 * 과제: case에 사용되는 리터럴 상수 -> 상수 변경하세요.
+			 * 과제: 메뉴 5번 -> 전체 회원 정보 출력하는 기능 구현하세요.(AI도움ok)
+			 */
 			
 			
 		
