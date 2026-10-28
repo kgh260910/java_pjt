@@ -6,15 +6,21 @@ public class MemberService {
 	
 	// 속성
 	MemberDB db;
+	String memberId;
 	String memberMail;
 	String memberPhone;
 	
+	Flag serviceFlag;
+	
 	int loginFailureCount = 0;
 	
+	
 	// 생성자
-	public MemberService(MemberDB memberDB) {
+	public MemberService(MemberDB memberDB, Flag flag) {
 		this.db = memberDB;
+		this.serviceFlag = flag;
 	}
+	
 	
 
 	
@@ -26,28 +32,36 @@ public class MemberService {
 	public void doSignUp(Scanner scanner) {
 		
 		System.out.println("Input new member ID");
-		String memberId = scanner.next();
+		memberId = scanner.next();
+		
+		Member searchedMember = db.memberDB.get(memberId);
+		
+		if (searchedMember != null) {
+			System.out.println("중복 아이디 입니다.");
+			return;
+		}
 		
 		System.out.println("Input new member PW");
 		String memberPw = scanner.next();
-		
+			
 		System.out.println("Input new member MAIL");
 		String memberMail = scanner.next(); 
-		
+			
 		System.out.println("Input new member PHONE");
 		String memberPhone = scanner.next();
-		
+			
 		Member member = new Member(memberId, memberPw, memberMail, memberPhone);
 //		MemberDB db = new MemberDB();
-		
+			
 		db.memberDB.put(memberId, member);
-		
+			
 //		Member selectedMember = db.memberDB.get(memberId);
 //		selectedMember.printInfo();
 		db.memberDB.get(memberId).printInfo();
 		
+		
 		/*
-		 * 과제: ID 중복 체크 기능 추가
+		 * v과제: ID 중복 체크 기능 추가
 		 * 과제: 비밀번호는 8~12 문자로 표현
 		 */
 		
@@ -78,7 +92,7 @@ public class MemberService {
 				if (loginFailureCount >= 3) {
 					loginFailureCount = 0;
 					System.out.println("3회 실패로 나가집니다.");
-					systemFlag = false;  
+					serviceFlag.systemFlag = false;  
 					
 				}
 				
@@ -86,12 +100,17 @@ public class MemberService {
 		} else {
 			System.out.println("SIGN-IN FAIL!!");
 			loginFailureCount += 1;
+			if (loginFailureCount >= 3) {
+				loginFailureCount = 0;
+				System.out.println("3회 실패로 나가집니다.");
+				serviceFlag.systemFlag = false;
 			
+			}
 		}
 	}
 	
 	/*
-	 * 과제: 로그인 실패가 3회 초과면 시스템 종료
+	 * v과제: 로그인 실패가 3회 초과면 시스템 종료
 	 */
 	
 	/*
@@ -105,7 +124,9 @@ public class MemberService {
 		System.out.println("Input member PW");
 		String memberPw = scanner.next();
 		
-		if ((memberId == scanner.next()) && (memberPw == scanner.next())) {
+		Member searchedMember = db.memberDB.get(memberId);
+		
+		if (searchedMember != null && searchedMember.memberPw.equals(memberPw)) {
 			
 			System.out.println("Input changing member PW");
 			memberPw = scanner.next();
@@ -115,14 +136,14 @@ public class MemberService {
 			
 			System.out.println("Input changing member PHONE");
 			String memberPhone = scanner.next();
+			
+			searchedMember.memberPw = memberPw;
+			searchedMember.memberMail = memberMail;
+			searchedMember.memberPhone = memberPhone;
+			
 		} else {
 			System.out.println("아이디나 비밀번호가 틀렸습니다.");
-		}
-		
-		Member searchedMember = db.memberDB.get(memberId);
-		searchedMember.memberPw = memberPw;
-		searchedMember.memberMail = memberMail;
-		searchedMember.memberPhone = memberPhone;
+		}	
 		
 		// 로깅
 		searchedMember = db.memberDB.get(memberId);
@@ -133,7 +154,7 @@ public class MemberService {
 //		System.out.println(searchedMember.memberPhone);
 		
 		/*
-		 * 과제: ID, PW 인증 -> ok -> 정보수정
+		 * v과제: ID, PW 인증 -> ok -> 정보수정
 		 */
 	}
 	
