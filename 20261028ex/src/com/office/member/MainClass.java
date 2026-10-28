@@ -8,6 +8,7 @@ public class MainClass {
 		
 		Scanner scanner = new Scanner(System.in);
 		boolean systemFlag = true;
+		MemberService memberService = new MemberService(new MemberDB());
 		
 		while (true) {
 			
@@ -16,21 +17,14 @@ public class MainClass {
 			
 			switch (selectedMenu) {
 			case 1: 			// SIGN-UP
-				System.out.println("Input new member ID");
-				String memberId = scanner.next();
-				
-				System.out.println("Input new member PW");
-				String memberPw = scanner.next();
-				
-				System.out.println("Input new member MAIL");
-				String memberMail = scanner.next(); 
-				
-				System.out.println("Input new member PHONE");
-				String memberPhone = scanner.next();
-				
+//				memberService = new MemberService();
+				memberService.doSignUp(scanner);
+			
 				break;
 				
 			case 2: 			// SIGN-IN
+//				memberService = new MemberService();
+				memberService.doSignIn(scanner);
 				
 				break;
 				
@@ -55,7 +49,7 @@ public class MainClass {
 			
 		}
 
-		scanner.close();
+	
 		
 	}
 
