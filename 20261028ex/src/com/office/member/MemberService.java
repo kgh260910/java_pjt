@@ -6,11 +6,17 @@ public class MemberService {
 	
 	// 속성
 	MemberDB db;
+	String memberMail;
+	String memberPhone;
+	
+	int loginFailureCount = 0;
 	
 	// 생성자
 	public MemberService(MemberDB memberDB) {
 		this.db = memberDB;
 	}
+	
+
 	
 	
 	// 메서드
@@ -68,10 +74,18 @@ public class MemberService {
 				
 			} else {
 				System.out.println("SIGN-IN FAIL!!");
+				loginFailureCount += 1;
+				if (loginFailureCount >= 3) {
+					loginFailureCount = 0;
+					System.out.println("3회 실패로 나가집니다.");
+					systemFlag = false;  
+					
+				}
 				
 			}
 		} else {
 			System.out.println("SIGN-IN FAIL!!");
+			loginFailureCount += 1;
 			
 		}
 	}
@@ -91,11 +105,19 @@ public class MemberService {
 		System.out.println("Input member PW");
 		String memberPw = scanner.next();
 		
-		System.out.println("Input member MAIL");
-		String memberMail = scanner.next(); 
-		
-		System.out.println("Input member PHONE");
-		String memberPhone = scanner.next();
+		if ((memberId == scanner.next()) && (memberPw == scanner.next())) {
+			
+			System.out.println("Input changing member PW");
+			memberPw = scanner.next();
+			
+			System.out.println("Input changing member MAIL");
+			String memberMail = scanner.next(); 
+			
+			System.out.println("Input changing member PHONE");
+			String memberPhone = scanner.next();
+		} else {
+			System.out.println("아이디나 비밀번호가 틀렸습니다.");
+		}
 		
 		Member searchedMember = db.memberDB.get(memberId);
 		searchedMember.memberPw = memberPw;
