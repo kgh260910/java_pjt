@@ -14,10 +14,10 @@ public class Car {
 	}
 
 	public Car(
-			String color,
-			int length,
-			int price,
-			int displacement) {
+		String color,
+		int length,
+		int price,
+		int displacement) {
 		this.color = color;
 		this.length = length;
 		this.price = price;
