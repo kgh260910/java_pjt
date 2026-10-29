@@ -8,13 +8,13 @@ public class MainClass {
 	public static void main(String[] args) {
 				
 		Config config = new Config();
+		Flag flag = new Flag();
 		
 		Scanner scanner = new Scanner(System.in);
 	
 		int selectedMenu = 0;
 		
 		MemberDB memberDB = new MemberDB();
-		Flag flag = new Flag();
 		
 		MemberService memberService = new MemberService(memberDB, flag);
 		
@@ -44,7 +44,7 @@ public class MainClass {
 				
 			case Menu.MENU_SIGN_IN: 			// SIGN-IN
 //				memberService = new MemberService();
-				memberService.doSignIn(scanner);
+				memberService.doSignIn(scanner, flag);
 				
 				break;
 				
