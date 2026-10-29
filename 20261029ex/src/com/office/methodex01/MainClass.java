@@ -14,7 +14,7 @@ public class MainClass {
 		// 요구사항: 고객이름 + 안녕하세요.(홍길동님 안녕하세요.)
 		greet.printGreetWord("홍길동");
 		*/
-		
+		/*
 		AddOperator addOperator = new AddOperator();
 		
 		addOperator.add(10, 20);
@@ -24,7 +24,14 @@ public class MainClass {
 		addOperator.add(3.14, 9.8);
 		
 		addOperator.add("Hello", "world");
+		*/
+		
+		Score score = new Score();
+		score.printStudentScore(90, 80, 70);
+		score.printStudentScore(90, 80, 70, 60, 70);
+		score.printStudentScore(90, 80, 70, 60);
 		
 	}
+	
 
 }
