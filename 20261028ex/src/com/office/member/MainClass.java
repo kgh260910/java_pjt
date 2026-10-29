@@ -1,17 +1,13 @@
 package com.office.member;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class MainClass {
 	
 	public static void main(String[] args) {
-		
-		final int MEMBER_SIGN_UP = 1;
-		final int MEMBER_SIGN_IN = 2;
-		final int MEMBER_MODIFY = 3;
-		final int MEMBER_DELETE = 4;
-		final int MEMBER_LIST_ALL = 5;
-		final int SYSTEM_OUT = 99;
+				
+		Config config = new Config();
 		
 		Scanner scanner = new Scanner(System.in);
 	
@@ -22,7 +18,7 @@ public class MainClass {
 		
 		MemberService memberService = new MemberService(memberDB, flag);
 		
-		if (DevDatabaseConfig.IS_DEV) {
+		if (config.IS_DEV) {
 			
 		MemberDumy memberDumy = new MemberDumy(memberDB);
 		memberDumy.initMemberDumyData();
@@ -35,40 +31,59 @@ public class MainClass {
 		
 		while (flag.systemFlag) {
 			
-			System.out.println("1.SIGN-UP    2.SIGN-IN    3.MODIFY    4.DELETE    99.SYSTEM-OUT");
+			System.out.println("1.SIGN-UP    2.SIGN-IN    3.MODIFY    4.DELETE    5.PRINT ALL MEMBER    99.SYSTEM-OUT");
 //			int selectedMenu = scanner.nextInt();
 			selectedMenu = scanner.nextInt();
 			
 			switch (selectedMenu) {
-			case MEMBER_SIGN_UP: 			// SIGN-UP
+			case Menu.MENU_SIGN_UP: 			// SIGN-UP
 //				memberService = new MemberService();
 				memberService.doSignUp(scanner);
 			
 				break;
 				
-			case MEMBER_SIGN_IN: 			// SIGN-IN
+			case Menu.MENU_SIGN_IN: 			// SIGN-IN
 //				memberService = new MemberService();
 				memberService.doSignIn(scanner);
 				
 				break;
 				
-			case MEMBER_MODIFY: 			// MODIFY
+			case Menu.MENU_MODIFY: 			// MODIFY
 				
 				memberService.doModify(scanner);
 				
 				break;
 				
-			case MEMBER_DELETE: 			// DELETE
+			case Menu.MENU_DELETE: 			// DELETE
 				
 				memberService.doDelete(scanner);
 	
 				break;
 				
-			case MEMBER_LIST_ALL:				// 전체 회원 정보 출력
+			case Menu.MENU_PRINT_ALL_MEMBER:				// 전체 회원 정보 출력
+				
+				HashMap<String, Member> db = memberDB.memberDB;
+				
+//				db.keySet();  // 키 값만 얻기
+				for (String key : db.keySet()) {
+					Member member = db.get(key);
+					System.out.println(member.memberId);
+					System.out.println(member.memberPw);
+					System.out.println(member.memberMail);
+					System.out.println(member.memberPhone);
+				}
+				
+//				db.values();  // 밸류 값만 얻기
+				for (Member member : db.values()) {
+					System.out.println(member.memberId);
+					System.out.println(member.memberPw);
+					System.out.println(member.memberMail);
+					System.out.println(member.memberPhone);
+				}
 				
 				break;
 	
-			case SYSTEM_OUT: 			// SYSTEM-OUT
+			case Menu.MENU_SYSTEM_OUT: 			// SYSTEM-OUT
 				flag.systemFlag = false;
 				System.out.println("Say Good bye~");
 	
