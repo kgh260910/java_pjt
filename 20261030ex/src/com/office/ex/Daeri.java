@@ -4,7 +4,7 @@ public class Daeri {
 	
 	// 속성
 	public String name = "Kim Daeri";
-	public int money;
+	private int money;  
 	
 	// 생성자
 	public Daeri() {
@@ -16,5 +16,20 @@ public class Daeri {
 		System.out.println(name + "님 노고에 감사드립니다.");
 		System.out.println(money + "원 지급 완료!!");
 	}
+
+
+	public void setMoney(int money, String ceoPW) {
+		if (ceoPW.equals("1234")) {
+			this.money = money;
+		}
+
+	}
+	
+	public int getMoney() {
+		return this.money;
+	}
+
+	
+	
 
 }

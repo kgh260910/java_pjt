@@ -4,7 +4,7 @@ public class Chajang {
 	
 	// 속성
 	public String name = "Kim Chajang";
-	public int money;
+	private int money;
 		
 	// 생성자
 	public Chajang() {
