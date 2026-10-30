@@ -10,12 +10,14 @@ public class PayService {
 	Gwajang gwajang;
 	Chajang chajang;
 	
+	// 생성자
 	public PayService() {
 		daeri = new Daeri();
 		gwajang = new Gwajang();
 		chajang = new Chajang();
 	}
 	
+	// 메서드
 	public void pay(int month) {
 		
 		daeri.pay();
