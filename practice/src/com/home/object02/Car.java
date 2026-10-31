@@ -7,5 +7,9 @@ public class Car {
 	public void printCarName() {
 		System.out.println("차이름: " + carName);
 	}
+	
+	public void printCarNumber(int carNumber) {
+		System.out.println("차번호: " + carNumber);
+	}
 
 }

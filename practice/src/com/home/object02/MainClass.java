@@ -9,12 +9,14 @@ public class MainClass {
 //		carName.printCarName();
 		
 		Calculator calculator = new Calculator();
-		
 		int result = calculator.addOperator(10, 30);
 		
 		// calculator를 이용해서 자동차 하나를 가지고 싶다.
 		Car myCar = calculator.productCar();
 		
+		// 차번호도 출력해보자
+		Car myCar2 = new Car();
+		myCar2.printCarNumber(1938);
 		
 	}
 
