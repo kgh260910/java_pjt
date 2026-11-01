@@ -23,7 +23,7 @@ public class PayController {
 		int thisMonth = scanner.nextInt();
 		
 		PayService payService = new PayService(name, position);
-		payService.pay(thisMonth);
+		payService.pay(thisMonth, position);
 		
 		scanner.close();
 	}

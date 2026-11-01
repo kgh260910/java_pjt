@@ -14,21 +14,26 @@ public class PayService {
 	
 	// 생성자
 	public PayService(String name, int position) {
-		if (position == 1) 
-		daeri = new Daeri(name);
-			else if (position == 2)
-				gwajang = new Gwajang(name);
-			else if (position == 3)
-				chajang = new Chajang(name);
+		
+		if (position == 1)
+			daeri = new Daeri(name);
+		else if (position == 2)
+			gwajang = new Gwajang(name);
+		else if (position == 3)
+			chajang = new Chajang(name);
+		
 	}
 	
 	
 	// 메서드
-	public void pay(int month) {
+	public void pay(int month, int position) {
 		
-		daeri.pay();
-		gwajang.pay();
-		chajang.pay();
+		if (position == 1)
+			daeri.pay();
+		else if (position == 2)
+			gwajang.pay();
+		else if (position == 3)
+			chajang.pay();
 		
 		System.out.println(month + "월 급여 지급 완료!!");
 		
