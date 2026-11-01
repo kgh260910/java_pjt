@@ -3,11 +3,12 @@ package com.home.object03;
 public class Gwajang {
 	
 	// 속성
-	public String name = "Kim Gwajang";
+	public String name;
 	public int money;
 		
 	// 생성자
-	public Gwajang() {
+	public Gwajang(String name) {
+		this.name = name;
 		money = 2000;
 	}
 		

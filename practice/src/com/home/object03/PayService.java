@@ -13,10 +13,10 @@ public class PayService {
 	
 	
 	// 생성자
-	public PayService() {
-		daeri = new Daeri();
-		gwajang = new Gwajang();
-		chajang =new Chajang();
+	public PayService(String name) {
+		daeri = new Daeri(name);
+		gwajang = new Gwajang(name);
+		chajang = new Chajang(name);
 	}
 	
 	

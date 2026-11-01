@@ -12,10 +12,13 @@ public class PayController {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Please enter the month");
+		System.out.println("이름을 입력하세요.");
+		String name = scanner.next();
+		
+		System.out.println("월을 입력하세요.");
 		int thisMonth = scanner.nextInt();
 		
-		PayService payService = new PayService();
+		PayService payService = new PayService(name);
 		payService.pay(thisMonth);
 		
 		scanner.close();

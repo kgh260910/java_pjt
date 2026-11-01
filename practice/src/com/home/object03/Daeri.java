@@ -3,11 +3,12 @@ package com.home.object03;
 public class Daeri {
 	
 	// 속성
-	public String name = "Kim Daeri";
+	public String name;
 	public int money;
 	
 	// 생성자
-	public Daeri() {
+	public Daeri(String name) {
+		this.name = name;
 		money = 1000;
 	}
 	
