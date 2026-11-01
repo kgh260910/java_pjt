@@ -13,10 +13,13 @@ public class PayService {
 	
 	
 	// 생성자
-	public PayService(String name) {
+	public PayService(String name, int position) {
+		if (position == 1) 
 		daeri = new Daeri(name);
-		gwajang = new Gwajang(name);
-		chajang = new Chajang(name);
+			else if (position == 2)
+				gwajang = new Gwajang(name);
+			else if (position == 3)
+				chajang = new Chajang(name);
 	}
 	
 	
