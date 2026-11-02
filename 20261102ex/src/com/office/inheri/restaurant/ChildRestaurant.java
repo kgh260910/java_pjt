@@ -1,6 +1,8 @@
 package com.office.inheri.restaurant;
 
-public class ChildRestaurant extends ParentRestaurant {
+public class ChildRestaurant 
+					extends ParentRestaurant 
+					implements CheckList, CheckList2 {     // CheckList의 추상메서드들을 전부 구현해야 합니다.
 	
 	public final static int PARENT_MENU = 1;
 	public final static int CHILD_MENU = 2;
@@ -25,5 +27,29 @@ public class ChildRestaurant extends ParentRestaurant {
 	public void makeTangsuyuk() {
 		System.out.println("아들꺼! 탕수육 만듦!!");
 	}
+
+
+	@Override
+	public void checkFloor() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void checkToilet() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void checkHwagu() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
 
 }
