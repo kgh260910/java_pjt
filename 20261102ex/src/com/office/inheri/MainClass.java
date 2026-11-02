@@ -14,10 +14,11 @@ public class MainClass {
 		
 		// 상속 후 메서드 사용
 		ChildRestaurant childRestaurant = new ChildRestaurant();
-		childRestaurant.makeJajang();         // 아들메서드를 먼저 찾은다음
-		childRestaurant.makeJjamppong();      // 없으면 아빠클래스로 가서 찾는다.
+		childRestaurant.makeJajang(ChildRestaurant.PARENT_MENU);   
+		childRestaurant.makeJajang(ChildRestaurant.CHILD_MENU);
+		childRestaurant.makeJjamppong();      // 아들메서드를 먼저 찾은다음 없으면 아빠클래스로 가서 찾는다.
 		childRestaurant.makeBokkeumbap();
-		
+		childRestaurant.makeTangsuyuk();
 		
 	}
 
