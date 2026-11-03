@@ -6,11 +6,11 @@ public class MainClass {
 		
 		OurCalculator ourCalculator = new OurCalculator();
 		
-		// 10 20
-		ourCalculator.calAdd(10, 20);
-		ourCalculator.calSub(10, 20);
-		ourCalculator.calMul(10, 20);
-		ourCalculator.calDiv(10, 20);
+		// 20 10
+		ourCalculator.calAdd(20, 10);
+		ourCalculator.calSub(20, 10);
+		ourCalculator.calMul(20, 10);
+		ourCalculator.calDiv(20, 10);
 		
 		
 	}
