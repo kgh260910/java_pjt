@@ -5,8 +5,9 @@ public class OurCalculator {
 	// 덧셈 연산
 	public void calAdd(int n1, int n2) {
 //		int result = n1 + n2;
-		CalAdd calAdd = new CalAdd();
-		int result = calAdd.calAdd(n1, n2);
+		ICalculator iCalculator = new CalAdd();
+		int result = iCalculator.doOperator(n1, n2);
+//		int result = calAdd.calAdd();
 		System.out.println("result: " + result);
 		
 	}

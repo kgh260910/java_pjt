@@ -1,6 +1,6 @@
 package com.office.calculator;
 
-public class CalMul {
+public class CalMul implements ICalculator {
 	
 	// 곱셈 연산
 	public int calMul(int n1, int n2) {
@@ -8,6 +8,12 @@ public class CalMul {
 		return result;
 //		System.out.println("result: " + result);
 			
+	}
+
+	@Override
+	public int doOperator(int n1, int n2) {
+		
+		return 0;
 	}
 
 }

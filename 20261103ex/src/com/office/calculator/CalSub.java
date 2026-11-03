@@ -1,6 +1,6 @@
 package com.office.calculator;
 
-public class CalSub {
+public class CalSub implements ICalculator {
 	
 	// 뺄셈 연산
 	public int calSub(int n1, int n2) {
@@ -8,6 +8,12 @@ public class CalSub {
 		return result;
 //		System.out.println("result: " + result);
 			
+	}
+
+	@Override
+	public int doOperator(int n1, int n2) {
+		
+		return 0;
 	}
 
 }
