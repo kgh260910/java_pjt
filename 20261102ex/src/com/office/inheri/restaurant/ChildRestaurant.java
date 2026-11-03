@@ -14,7 +14,7 @@ public class ChildRestaurant
 	
 	
 	// 상속 후 오버라이딩(상속을 받은 메서드를 재정의한다)
-//	@Override
+//	@Override 
 	public void makeJajang(int menu) {
 		if (menu == PARENT_MENU) {
 			super.makeJajang();        // super.를 앞에 붙이면 한단계 위 클래스를 가리킵니다. -> "아빠 자장 만듦!"
