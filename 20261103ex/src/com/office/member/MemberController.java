@@ -31,8 +31,6 @@ public class MemberController implements MemberConfig {
 				
 				MemberDto memberDto = new MemberDto(memId, memPw, memMail, memPhone);
 				
-				
-				
 				memberService.signUp(memberDto);
 				break;
 				
