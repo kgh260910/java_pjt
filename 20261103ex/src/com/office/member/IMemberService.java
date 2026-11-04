@@ -1,7 +1,5 @@
 package com.office.member;
 
-import java.util.Scanner;
-
 public interface IMemberService {
 	
 	public void signUp(MemberDto memberDto);

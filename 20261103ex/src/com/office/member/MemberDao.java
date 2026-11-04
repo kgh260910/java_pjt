@@ -55,11 +55,11 @@ public class MemberDao {
 	public MemberDto deleteMemberByMemIdAndMemPw(MemberDto memberDto) {
 		
 		MemberDto dto = db.get(memberDto.getMemId());
-		System.out.println("dto: " + dto);
+//		System.out.println("dto: " + dto);
 		
 		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
 			MemberDto deletedMemberDto = db.remove(memberDto.getMemId());
-			System.out.println("deletedMemberDto: " + deletedMemberDto);
+//			System.out.println("deletedMemberDto: " + deletedMemberDto);
 			
 			if (deletedMemberDto != null) {
 				return deletedMemberDto;

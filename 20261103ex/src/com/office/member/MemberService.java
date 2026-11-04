@@ -1,7 +1,5 @@
 package com.office.member;
 
-import java.util.Scanner;
-
 public class MemberService implements IMemberService {
 	
 	MemberDao memberDao = new MemberDao();
@@ -51,7 +49,7 @@ public class MemberService implements IMemberService {
 	@Override
 	public void delete(MemberDto memberDto) {
 		
-		MemberDto deletedMemberDto = memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		MemberDto deletedMemberDto = memberDao.deleteMemberByMemIdAndMemPw(memberDto);
 		
 		if (deletedMemberDto != null) {
 			System.out.println("탈퇴처리 완료되었습니다.");
