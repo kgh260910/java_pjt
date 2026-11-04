@@ -29,8 +29,16 @@ public class MemberService implements IMemberService {
 	}
 
 	@Override
-	public void signIn() {
-		// TODO Auto-generated method stub
+	public void signIn(MemberDto memberDto) {
+		
+		MemberDto searchedMemberDto = 
+				memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		
+		if (searchedMemberDto != null) {
+			System.out.println("로그인 성공!!");
+		} else {
+			System.out.println("로그인 실패!!");
+		}
 		
 	}
 

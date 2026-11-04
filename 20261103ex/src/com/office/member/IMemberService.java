@@ -6,10 +6,11 @@ public interface IMemberService {
 	
 	public void signUp(MemberDto memberDto);
 	
-	public void signIn();
+	public void signIn(MemberDto memberDto);
 	
 	public void modify();
 	
 	public void delete();
+
 
 }

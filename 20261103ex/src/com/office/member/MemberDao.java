@@ -29,4 +29,28 @@ public class MemberDao {
 		return db.get(memberDto.getMemId()) != null ? 1 : 0;   // 0 or 1
 	}
 
+	public MemberDto searchMemberByMemIdAndMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = db.get(memberDto.getMemId()); 
+		
+		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
+			return dto;
+		} else {
+			return null;
+		}
+		
+		/*
+		if (dto != null) {
+			
+			if (dto.getMemPw().equals(memberDto.getMemPw())) {
+				return dto;
+			} else {
+				return null;
+			}
+		} else {
+			return null;
+		}
+		*/	
+	}
+
 }
