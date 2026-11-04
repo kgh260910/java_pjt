@@ -10,6 +10,9 @@ public class MemberController implements MemberConfig {
 		boolean systemFlag = true;
 		MemberService memberService = new MemberService();
 		
+		if (IS_DEV)
+			new MemberDumy().signUpForDumy(memberService);
+		
 		while (systemFlag) {
 			System.out.println("1.SIGN-UP    2.SIGN-IN    3.MODIFY    4.DELETE    99.SYSTEM-OUT");
 			int selectedMenuNum = scanner.nextInt();
