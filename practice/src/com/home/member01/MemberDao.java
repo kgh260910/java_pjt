@@ -20,6 +20,16 @@ public class MemberDao {
 		
 		return db.put(memberDto.getMemId(), memberDto) != null ? 1 : 0;
 	}
+
+	public MemberDto searchMemberByMemIdAndMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = db.get(memberDto.getMemId());
+		
+		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
+			return dto;
+		} else
+			return null;
+	}
 	
 	
 

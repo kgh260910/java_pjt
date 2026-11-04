@@ -20,4 +20,16 @@ public class MemberService {
 			System.out.println("이미 존재하는 ID입니다.");
 	}
 
+	public void signIn(MemberDto memberDto) {
+		
+		MemberDto searchedMemberDto = 
+				memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		
+		if (searchedMemberDto != null) 
+			System.out.println("로그인 성공!!");
+		else 
+			System.out.println("로그인 실패!!");
+		
+	}
+
 }

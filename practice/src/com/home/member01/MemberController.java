@@ -46,6 +46,16 @@ public class MemberController implements MemberConfig {
 				break;
 				
 			case SIGN_IN:
+				System.out.println("Input member ID!!");
+				memId = scanner.next();
+				
+				System.out.println("Input member PW!!");
+				memPw = scanner.next();
+				
+				memberDto = new MemberDto(memId, memPw, null, null);
+				
+				memberService.signIn(memberDto);
+				
 				break;
 				
 			case MODIFY:
