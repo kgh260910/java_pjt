@@ -32,4 +32,15 @@ public class MemberService {
 		
 	}
 
+	public void delete(MemberDto memberDto) {
+		
+		MemberDto deletedMemberDto = memberDao.deleteMemberByMemIdAndMemPw(memberDto);
+		
+		if (deletedMemberDto != null) {
+			System.out.println("탈퇴처리 완료되었습니다.");
+		} else {
+			System.out.println("탈퇴처리 실패했습니다.");
+		}
+	}
+
 }
