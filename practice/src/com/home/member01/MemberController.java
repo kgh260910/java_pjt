@@ -75,6 +75,8 @@ public class MemberController implements MemberConfig {
 				break;
 				
 			case SYSTEM_OUT:
+				systemFlag = false;
+				System.out.println("good bye~");
 				break;
 				
 			}
