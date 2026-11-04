@@ -10,7 +10,7 @@ public interface IMemberService {
 	
 	public void modify();
 	
-	public void delete();
+	public void delete(MemberDto memberDto);
 
 
 }

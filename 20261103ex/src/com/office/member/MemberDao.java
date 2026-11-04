@@ -35,9 +35,9 @@ public class MemberDao {
 		
 		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
 			return dto;
-		} else {
+		} else 
 			return null;
-		}
+	}
 		
 		/*
 		if (dto != null) {
@@ -51,6 +51,26 @@ public class MemberDao {
 			return null;
 		}
 		*/	
+		
+	public MemberDto deleteMemberByMemIdAndMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = db.get(memberDto.getMemId());
+		System.out.println("dto: " + dto);
+		
+		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
+			MemberDto deletedMemberDto = db.remove(memberDto.getMemId());
+			System.out.println("deletedMemberDto: " + deletedMemberDto);
+			
+			if (deletedMemberDto != null) {
+				return deletedMemberDto;
+			} else {
+				return null;
+			}
+			
+		} else {
+			return null;
+		}
+		
 	}
 
 }
