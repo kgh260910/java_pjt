@@ -16,19 +16,36 @@ public class MemberController implements MemberConfig {
 			
 			switch (selectedMenuNum) {
 			case SIGN_UP:
-				memberService.signUp(scanner);
+				
+				System.out.println("Input new member ID!!");
+				String memId = scanner.next();
+				
+				System.out.println("Input new member PW!!");
+				String memPw = scanner.next();
+				
+				System.out.println("Input new member MAIL!!");
+				String memMail = scanner.next();
+				
+				System.out.println("Input new member PHONE!!");
+				String memPhone = scanner.next();
+				
+				MemberDto memberDto = new MemberDto(memId, memPw, memMail, memPhone);
+				
+				
+				
+				memberService.signUp(memberDto);
 				break;
 				
 			case SIGN_IN:
-				memberService.signIn(scanner);
+				memberService.signIn();
 				break;
 				
 			case MODIFY:
-				memberService.modify(scanner);
+				memberService.modify();
 				break;
 				
 			case DELETE:
-				memberService.delete(scanner);
+				memberService.delete();
 				break;
 				
 			case SYSTEM_OUT:
