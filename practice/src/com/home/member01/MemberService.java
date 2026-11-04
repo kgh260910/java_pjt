@@ -16,9 +16,8 @@ public class MemberService {
 				System.out.println("회원가입에 성공했습니다.");
 			else 
 				System.out.println("회원가입에 실패했습니다.");
-		}
-		
-		
+		} else
+			System.out.println("이미 존재하는 ID입니다.");
 	}
 
 }

@@ -2,6 +2,8 @@ package com.home.member01;
 
 public interface MemberConfig {
 	
+	final boolean IS_DEV = true;
+	
 	final int SIGN_UP = 1;
 	final int SIGN_IN = 2;
 	final int MODIFY = 3;

@@ -10,6 +10,10 @@ public class MemberController implements MemberConfig {
 		boolean systemFlag = true;
 		MemberService memberService = new MemberService();
 		
+		if (IS_DEV) {
+			new MemberDumy().signUpForDumy(memberService);
+		}
+		
 		String memId;
 		String memPw;
 		String memMail;
