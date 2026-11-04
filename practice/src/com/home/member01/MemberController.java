@@ -2,7 +2,7 @@ package com.home.member01;
 
 import java.util.Scanner;
 
-public class MemberController {
+public class MemberController implements MemberConfig {
 	
 	public void execute() {
 		
@@ -21,19 +21,36 @@ public class MemberController {
 			int selectedMenuNum = scanner.nextInt();
 			
 			switch (selectedMenuNum) {
-			case 1:
+			case SIGN_UP:
+				
+				System.out.println("Input new member ID!!");
+				memId = scanner.next();
+				
+				System.out.println("Input new member PW!!");
+				memPw = scanner.next();
+				
+				System.out.println("Input new member MAIL!!");
+				memMail = scanner.next();
+				
+				System.out.println("Input new member PHONE!!");
+				memPhone = scanner.next();
+				
+				memberDto = new MemberDto(memId, memPw, memMail, memPhone);
+				
+				memberService.signUp(memberDto);
+				
 				break;
 				
-			case 2:
+			case SIGN_IN:
 				break;
 				
-			case 3:
+			case MODIFY:
 				break;
 				
-			case 4:
+			case DELETE:
 				break;
 				
-			case 99:
+			case SYSTEM_OUT:
 				break;
 				
 			}
