@@ -21,9 +21,21 @@ public class DiaryController implements IDiaryConfig {
 			
 			switch (selectedMenuNum) {
 			case DIARY_WRITE:
+				
+				scanner.nextLine();  // 가비지데이터 날리기용
+				
+				System.out.println("INPUT NEW DIARY TXT!!");
+				String txt = scanner.nextLine();
+				
+				DiaryDto diaryDto = new DiaryDto(txt);
+				
+				diaryService.writeNewDiary(diaryDto);
+				
 				break;
 				
 			case DIARY_READ:
+				
+				diaryService.readDiraries();
 				break;
 				
 			case SYSTEM_OUT:
