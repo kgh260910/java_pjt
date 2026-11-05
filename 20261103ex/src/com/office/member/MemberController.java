@@ -4,11 +4,14 @@ import java.util.Scanner;
 
 public class MemberController implements MemberConfig {
 	
+	final private MemberService memberService = 
+			MemberContainer.getInstance().getMemberService();
+	
 	public void execute() {
 		
 		Scanner scanner = new Scanner(System.in);
 		boolean systemFlag = true;
-		MemberService memberService = new MemberService();
+//		MemberService memberService = new MemberService();
 		
 		if (IS_DEV)
 			new MemberDumy().signUpForDumy(memberService);

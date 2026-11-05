@@ -2,7 +2,10 @@ package com.office.member;
 
 public class MemberService implements IMemberService {
 	
-	MemberDao memberDao = new MemberDao();
+	final private MemberDao memberDao = 
+			MemberContainer.getInstance().getMemberDao();
+	
+//	MemberDao memberDao = new MemberDao();
 
 	@Override
 	public void signUp(MemberDto memberDto) {

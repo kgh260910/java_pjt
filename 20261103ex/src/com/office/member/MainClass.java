@@ -7,9 +7,12 @@ public class MainClass {
 		
 //		new MemberController().execute();
 		
-		MemberContainer memberContainer = MemberContainer.getInstance();
+//		MemberContainer memberContainer = MemberContainer.getInstance();
+//		memberContainer.getMemberController().execute();
 		
-		memberContainer.getMemberController().execute();
+		MemberContainer.getInstance()
+						.getMemberController()
+						.execute();
 		
 		
 	
