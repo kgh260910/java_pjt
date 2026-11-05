@@ -21,7 +21,17 @@ public class MemberDao {
 		
 		return db.get(memberDto.getMemId()) != null ? 1 : 0;
 	}
-	
-	
+
+	// 로그인 시 확인
+	public MemberDto searchMemberByMemIdAndMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = db.get(memberDto.getMemId());
+		
+		if (dto !=null && dto.getMemPw().equals(memberDto.getMemPw())) {
+			return dto;
+		} else {
+			return null;
+		}
+	}		
 
 }

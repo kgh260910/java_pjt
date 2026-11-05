@@ -29,7 +29,15 @@ public class MemberService implements IMemberService {
 
 	@Override
 	public void signIn(MemberDto memberDto) {
-		// TODO Auto-generated method stub
+		
+		MemberDto searchedMemberDto = 
+				memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		
+		if (searchedMemberDto != null) {
+			System.out.println("로그인 성공!!");
+		} else {
+			System.out.println("로그인 실패!!");
+		}
 		
 	}
 
