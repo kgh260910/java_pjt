@@ -1,6 +1,6 @@
 package com.home.object04;
 
-public class Daeri {
+public class Daeri implements Employee {
 	
 	public String name = "Kim Daeri";
 	private int money;

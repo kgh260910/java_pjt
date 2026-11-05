@@ -17,14 +17,12 @@ public class PayController {
 		
 		while (systemFlag) {
 			System.out.println("Please enter the month");
+			
 			int thisMonth = scanner.nextInt();
-			
-			
 			
 			payService.pay(thisMonth);
 			
 		}
-		
 		
 		scanner.close();
 	}

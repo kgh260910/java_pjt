@@ -1,6 +1,6 @@
 package com.home.object04;
 
-public class Gwajang {
+public class Gwajang implements Employee {
 	
 	public String name = "Kim Gwajang";
 	private int money;
