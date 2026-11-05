@@ -56,7 +56,14 @@ public class MemberService implements IMemberService {
 
 	@Override
 	public void delete(MemberDto memberDto) {
-		// TODO Auto-generated method stub
+		
+		MemberDto deletedMemberDto = memberDao.deleteMemberByMemIdAndMemPw(memberDto);
+		
+		if (deletedMemberDto != null) {
+			System.out.println("탈퇴 성공");
+		} else {
+			System.out.println("탈퇴 실패");
+		}
 		
 	}
 
