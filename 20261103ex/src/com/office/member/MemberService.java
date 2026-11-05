@@ -2,8 +2,13 @@ package com.office.member;
 
 public class MemberService implements IMemberService {
 	
-	final private MemberDao memberDao = 
-			MemberContainer.getInstance().getMemberDao();
+	final private MemberDao memberDao;
+//	final private MemberDao memberDao = 
+//			MemberContainer.getInstance().getMemberDao();
+	
+	public MemberService(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
 	
 //	MemberDao memberDao = new MemberDao();
 

@@ -4,9 +4,9 @@ package com.office.member;
 public class MemberContainer {
 	
 	// final(상수화 해줌)을 넣음으로써 해당클래스에서 new MemberController();등으로 재할당하지 못합니다. 
-	final private MemberController MEMBERCONTROLLER = new MemberController();
-	final private MemberService MEMBERSERVICE = new MemberService();
-	final private MemberDao MEMBERDAO = new MemberDao();
+	final public MemberDao MEMBER_DAO = new MemberDao();
+	final public MemberService MEMBER_SERVICE = new MemberService(MEMBER_DAO);
+	final public MemberController MEMBER_CONTROLLER = new MemberController(MEMBER_SERVICE);
 	
 	private static MemberContainer memberContainer = new MemberContainer();
 	
@@ -25,15 +25,15 @@ public class MemberContainer {
 	}
 
 	public MemberController getMemberController() {
-		return MEMBERCONTROLLER;
+		return MEMBER_CONTROLLER;
 	}
 
 	public MemberService getMemberService() {
-		return MEMBERSERVICE;
+		return MEMBER_SERVICE;
 	}
 
 	public MemberDao getMemberDao() {
-		return MEMBERDAO;
+		return MEMBER_DAO;
 	}
 	
 	
