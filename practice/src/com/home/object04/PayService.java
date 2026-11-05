@@ -15,15 +15,19 @@ public class PayService {
 	}
 	*/
 	
-	
+	// 속성
 	private Daeri daeri;
 	private Gwajang gwajang;
 	
+	
+	// 생성자
 	public PayService(Daeri daeri, Gwajang gwajang) {
 		this.daeri = daeri;
 		this.gwajang = gwajang;
 	}
 	
+	
+	// 메서드
 	public void pay(int month) {
 		/*
 		 * for (Employee emp : employees) {
@@ -35,6 +39,8 @@ public class PayService {
 		this.gwajang.pay();
 		
 		System.out.println(month + "월 급여 지급 완료!!");
+		
+		PayCount.getPayCountInstance();
 	}
 	
 	
