@@ -41,8 +41,15 @@ public class MemberService implements IMemberService {
 	}
 
 	@Override
-	public void modify() {
-		// TODO Auto-generated method stub
+	public void modify(MemberDto memberDto) {
+		
+		MemberDto updatedMemberDto = memberDao.updateMemberByMemId(memberDto);
+		
+		if (updatedMemberDto != null) {
+			System.out.println("Modify SUCCESS!!");
+		} else {
+			System.out.println("Modify FAIL!!");
+		}
 		
 	}
 
@@ -56,6 +63,16 @@ public class MemberService implements IMemberService {
 		} else {
 			System.out.println("탈퇴처리 실패했습니다.");
 		}
+		
+	}
+
+	public boolean doAuthenticationByMemIdandMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		// MemberDto를 반환하는데 => MemberDto or Null 반환한다.
+		
+		return dto != null ? true : false;
+		 
 		
 	}
 
