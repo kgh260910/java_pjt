@@ -43,7 +43,14 @@ public class MemberService implements IMemberService {
 
 	@Override
 	public void modify(MemberDto memberDto) {
-		// TODO Auto-generated method stub
+		
+		MemberDto updatedMemberDto = memberDao.updateMemberByMemId(memberDto);
+		
+		if (updatedMemberDto != null) {
+			System.out.println("수정 완료");
+		} else {
+			System.out.println("수정 실패");
+		}
 		
 	}
 
@@ -51,6 +58,13 @@ public class MemberService implements IMemberService {
 	public void delete(MemberDto memberDto) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public boolean doAuthenticationByMemIdandMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = memberDao.searchMemberByMemIdAndMemPw(memberDto);
+		
+		return dto != null ? true : false;
 	}
 
 }

@@ -54,10 +54,36 @@ public class MemberController implements MemberConfig {
 				memberService.signIn(memberDto);
 				
 				break;
+				
 			case MODIFY:
+				/*
+				 * ID,PW 인증OK -> Mail,phone 수정
+				 */
+				System.out.println("Input member ID!!");
+				memId = scanner.next();
+				System.out.println("Input member PW!!");
+				memPw = scanner.next();
+				
+				memberDto = new MemberDto(memId, memPw, null, null);
+				
+				boolean isAuthentication = memberService.doAuthenticationByMemIdandMemPw(memberDto);
+				
+				if (isAuthentication) {
+					System.out.println("Input member Mail!!");
+					memMail = scanner.next();
+					System.out.println("Input member Phone!!");
+					memPhone = scanner.next();
+					
+					memberDto.setMemMail(memMail);
+					memberDto.setMemPhone(memPhone);
+					
+					memberService.modify(memberDto);
+				}
 				break;
+				
 			case DELETE:
 				break;
+				
 			case SYSTEM_OUT:
 				systemFlag = false;
 				System.out.println("시스템 종료");
