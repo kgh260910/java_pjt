@@ -10,7 +10,7 @@ public class MemberController implements MemberConfig {
 		this.memberService = memberService;
 	}
 	
-	public void excute() {
+	public void execute() {
 		
 		Scanner scanner = new Scanner(System.in);
 		boolean systemFlag = true;
@@ -26,7 +26,21 @@ public class MemberController implements MemberConfig {
 			int selectedMenuNum = scanner.nextInt();
 			switch (selectedMenuNum) {
 			case SIGN_UP:
+				
+				System.out.println("Input new member ID!!");
+				memId = scanner.next();
+				System.out.println("Input new member PW!!");
+				memPw = scanner.next();
+				System.out.println("Input new member MAIL!!");
+				memMail = scanner.next();
+				System.out.println("Input new member PHONE!!");
+				memPhone = scanner.next();
+				
+				memberDto = new MemberDto(memId, memPw, memMail, memPhone);
+				
+				memberService.signUp(memberDto);
 				break;
+				
 			case SIGN_IN:
 				break;
 			case MODIFY:

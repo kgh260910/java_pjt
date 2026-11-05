@@ -17,6 +17,21 @@ public class MemberContainer {
 		}
 		return memberContainer;
 	}
+
+	public MemberDao getMemberDao() {
+		return memberDao;
+	}
+
+	public MemberService getMemberService() {
+		return memberService;
+	}
+
+	public MemberController getMemberController() {
+		return memberController;
+	}
+
+	
+	
 	
 	
 }
