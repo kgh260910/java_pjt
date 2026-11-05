@@ -19,6 +19,4 @@ public class DiaryDto {
 		this.txt = txt;
 	}
 	
-	
-
 }

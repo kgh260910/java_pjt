@@ -12,12 +12,7 @@ public class MainClass {
 		
 		MemberContainer.getInstance()
 						.getMemberController()
-						.execute();
-		
-		
-	
-		
-		
+						.execute();	
 	}
 
 }

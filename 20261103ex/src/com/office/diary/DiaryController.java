@@ -41,12 +41,8 @@ public class DiaryController implements IDiaryConfig {
 			case SYSTEM_OUT:
 				systemFlag = false;
 				break;
-			
 			}
 		}
-		
-		scanner.close();
-		
+		scanner.close();	
 	}
-
 }

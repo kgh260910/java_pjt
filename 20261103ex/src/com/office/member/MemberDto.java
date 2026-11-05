@@ -18,7 +18,6 @@ public class MemberDto {
 		this.memPhone = memPhone;
 	}
 
-	
 	public String getMemId() {
 		return memId;
 	}
@@ -50,8 +49,4 @@ public class MemberDto {
 	public void setMemPhone(String memPhone) {
 		this.memPhone = memPhone;
 	}
-	
-	
-	
-	
 }

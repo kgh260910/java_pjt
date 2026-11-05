@@ -36,8 +36,4 @@ public class MemberContainer {
 		return MEMBER_DAO;
 	}
 	
-	
-	
-	
-
 }

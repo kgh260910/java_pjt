@@ -18,9 +18,7 @@ public class DiaryAssembler {
 		if (diaryAssembler == null) {
 			diaryAssembler = new DiaryAssembler();
 		}
-		
-		return diaryAssembler;
-		
+		return diaryAssembler;	
 	}
 
 	public DiaryController getDiaryController() {
@@ -34,8 +32,5 @@ public class DiaryAssembler {
 	public DiaryDao getDiaryDao() {
 		return DIARY_DAO;
 	}	
-	
-	
-	
 
 }

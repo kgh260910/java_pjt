@@ -10,5 +10,4 @@ public interface IMemberService {
 	
 	public void delete(MemberDto memberDto);
 
-
 }
