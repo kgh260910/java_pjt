@@ -43,6 +43,8 @@ public class PayService {
 		PayCount.getPayCountInstance();
 	}
 	
-	
+	public void setMoney() {
+		daeri.setMoney(500, "1234"); // 대리에게 500원주기
+	}
 
 }

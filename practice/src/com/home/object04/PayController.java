@@ -2,6 +2,8 @@ package com.home.object04;
 
 import java.util.Scanner;
 
+import com.home.object01.Daeri;
+
 public class PayController {
 	
 	private PayService payService;
@@ -21,6 +23,8 @@ public class PayController {
 			int thisMonth = scanner.nextInt();
 			
 			payService.pay(thisMonth);
+			
+			
 			
 		}
 		

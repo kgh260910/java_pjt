@@ -14,4 +14,20 @@ public class Daeri implements Employee {
 		System.out.println(money + "원 지급 완료!!");
 	}
 
+	
+	
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money, String ceoPw) {
+		if (ceoPw.equals("1234")) {
+			this.money = money;
+			System.out.println("급여가" + money + "원으로 변경되었습니다.");
+		}
+	}
+	
+	
+	
+
 }
