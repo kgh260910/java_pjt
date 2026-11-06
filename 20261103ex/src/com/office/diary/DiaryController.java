@@ -10,7 +10,7 @@ public class DiaryController implements IDiaryConfig {
 		this.diaryService = diaryService;
 	}
 
-	public void excute() {
+	public void execute() {
 	
 		Scanner scanner = new Scanner(System.in);
 		boolean systemFlag = true;

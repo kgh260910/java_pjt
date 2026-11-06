@@ -4,7 +4,7 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 		
-		DiaryAssembler.getInstance().getDiaryController().excute();
+		DiaryAssembler.getInstance().getDiaryController().execute();
 	}
 
 }
