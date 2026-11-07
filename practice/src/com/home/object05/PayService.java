@@ -22,6 +22,10 @@ public class PayService {
 		gwajang.pay();
 		System.out.println(month + "월 급여 지급 완료!!");
 		
+		PayCount.getPayCountInstance().setCnt();
+		int cnt = PayCount.getPayCountInstance().getCnt();
+		System.out.println("누적 급여 횟수: " + cnt);
+		
 	}
 	
 	

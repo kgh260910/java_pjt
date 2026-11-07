@@ -25,8 +25,8 @@ public class PayCount {
 	}
 
 	// 설정(초기화)
-	public void setCnt(int cnt) {
-		this.cnt = cnt++;
+	public void setCnt() {
+		this.cnt = ++cnt;
 	}
 	
 	
