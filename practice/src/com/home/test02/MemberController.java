@@ -11,12 +11,28 @@ public class MemberController {
 	}
 	
 	
-	public void execute(Scanner scanner) {
+	public void execute(Scanner scanner, int selectedMenu) {
 		
 		String memId;
 		String memPw;
 		String memMail;
 		String memPhone;
+		
+		switch (selectedMenu) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+			
+		
+			
+		}
 		
 	}
 
