@@ -7,6 +7,20 @@ public class MemberService {
 	public MemberService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
+
+	public int signUp(MemberDto memberDto) {
+		
+		boolean isMember = memberDao.isMember(memberDto.getMemId());
+		
+		if (!isMember) {
+			return memberDao.insertMember(memberDto);
+			
+		} else {
+			return 0;
+		}
+		
+
+	}
 	
 	
 

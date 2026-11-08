@@ -20,6 +20,21 @@ public class MemberController {
 		
 		switch (selectedMenu) {
 		case 1:
+			System.out.println("Input new member ID!!");
+			memId = scanner.next();
+			System.out.println("Input new member ID!!");
+			memPw = scanner.next();
+			System.out.println("Input new member ID!!");
+			memMail = scanner.next();
+			System.out.println("Input new member ID!!");
+			memPhone = scanner.next();
+			
+			int resultForSignUp = memberService.signUp(new MemberDto(memId, memPw, memMail, memPhone));
+			/*
+			 * 가입성공확인 추가필요
+			 */
+			
+			
 			break;
 		case 2:
 			break;

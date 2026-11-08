@@ -21,6 +21,10 @@ public class DiaryDb {
 			diaryDb = new DiaryDb();
 		return diaryDb;
 	}
+
+	public HashMap<String, MemberDto> getMembers() {
+		return members;
+	}
 	
 
 }
