@@ -3,8 +3,8 @@ package com.home.member03;
 public class MemberContainer {
 	
 	final public MemberDao memberDao = new MemberDao();
-	final public MemberService memberService = new MemberService();
-	final public MemberController memberController = new MemberController();
+	final public MemberService memberService = new MemberService(memberDao);
+	final public MemberController memberController = new MemberController(memberService);
 	
 	private static MemberContainer memberContainer = new MemberContainer();
 	
