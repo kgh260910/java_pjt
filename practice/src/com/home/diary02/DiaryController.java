@@ -2,7 +2,7 @@ package com.home.diary02;
 
 import java.util.Scanner;
 
-public class DiaryController {
+public class DiaryController implements IDiaryConfig {
 	
 	final private DiaryService diaryService;
 
@@ -21,7 +21,7 @@ public class DiaryController {
 			int selectedMenuNum = scanner.nextInt();
 			
 			switch (selectedMenuNum) {
-			case 1:
+			case DIARY_WRITE:
 				
 				scanner.nextLine();
 				
@@ -34,12 +34,12 @@ public class DiaryController {
 				
 				break;
 				
-			case 2:
+			case DIARY_READ:
 				
 				diaryService.readDiaries();
 				break;
 				
-			case 99:
+			case SYSTEM_OUT:
 				systemFlag = false;
 				break;
 				
