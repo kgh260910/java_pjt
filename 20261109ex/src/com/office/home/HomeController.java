@@ -1,6 +1,11 @@
 package com.office.home;
 
+import java.util.HashMap;
 import java.util.Scanner;
+
+import com.office.Container;
+import com.office.menu.Menu;
+import com.office.session.Session;
 
 // 프레젠테이션 로직 처리
 public class HomeController {
@@ -11,11 +16,35 @@ public class HomeController {
 		boolean systemFlag = true;
 		
 		while (systemFlag) {
-			// 로그인 하기 전 
-			System.out.println("1.SIGN-UP 2.SIGN-IN 99.SYSTEM-OUT");
 			
-			// 로그인 후
-			System.out.println("3.SIGN-OUT 4.MODIFY 5.DELETE 6.DIARY-WRITE 7.DIARY-READ 99.SYSTEM-OUT");
+			Menu.generateMenu();
+			
+			int selectedMenu = scanner.nextInt();
+			switch (selectedMenu) {
+			
+			// 멤버와 관련된 일 -> 멤버컨트롤러로 보내자!
+			case Menu.MEMBER_SIGN_UP:
+			case Menu.MEMBER_SIGN_IN:
+			case Menu.MEMBER_SIGN_OUT:
+			case Menu.MEMBER_MODIFY:
+			case Menu.MEMBER_DELETE:
+				// 스캐너를 넘겨줘야 작업가능, selectedMenu를 넘겨주어 해당작업을 하도록 만든다.
+				Container.getInstance().getMemberController().execute(scanner, selectedMenu);
+				break;
+				
+			// 다이어리와 관련된 일 -> 다이어리컨트롤러로 보내자!
+			case Menu.DIARY_WRITE:
+			case Menu.DIARY_READ:
+				Container.getInstance().getDiaryController().execute(scanner, selectedMenu);
+				break;
+				
+			case Menu.SYSTEM_OUT:
+				systemFlag = false;
+				System.out.println("Good bye~~");
+				break;
+			}
+			
+			
 		}
 		
 		

@@ -22,7 +22,7 @@ public class Session {
 	}
 
 	// attribute 객체를 가져오는 메서드 (getter)
-	public HashMap<String, Object> getAttribute() {
+	public HashMap<String, Object> getAttributies() {
 		return attributies;
 	}
 	
