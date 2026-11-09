@@ -16,15 +16,34 @@ public class MemberController {
 			int selectedMenuNum = scanner.nextInt();
 		
 			switch(selectedMenuNum) {
+			//1.회원가입
 			case 1:
+				System.out.println("Input new member ID!!");
+				String memId = scanner.next();
+				System.out.println("Input new member PW!!");
+				String memPw = scanner.next();
+				System.out.println("Input new member Mail!!");
+				String memMail = scanner.next();
+				System.out.println("Input new member Phone!!");
+				String memPhone = scanner.next();
+				
+				MemberDto memberDto = new MemberDto(memId, memPw, memMail, memPhone);
+				memberService.signUp(memberDto);
+				
 				break;
+			//2.로그인
 			case 2:
 				break;
+			//3.정보수정
 			case 3:
 				break;
+			//4.회원삭제
 			case 4:
 				break;
+			//99.시스템 종료
 			case 99:
+				systemFlag = false;
+				System.out.println("시스템 종료");
 				break;
 			}
 		}
