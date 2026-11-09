@@ -6,10 +6,6 @@ public class DiaryDao {
 	
 	private ArrayList<String> diaries = new ArrayList<String>();
 	
-	public ArrayList<String> getDiaries() {
-		return diaries;
-	}
-
 	public boolean insertDiary(DiaryDto diaryDto) {
 		
 		int beforeSize = diaries.size();
@@ -20,6 +16,10 @@ public class DiaryDao {
 		
 		
 		return afterSize > beforeSize ? true : false;
+	}
+	
+	public ArrayList<String> getDiaries() {
+		return diaries;
 	}
 
 }

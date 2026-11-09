@@ -1,5 +1,7 @@
 package com.home.diary02;
 
+import java.util.ArrayList;
+
 public class DiaryService {
 	
 	final private DiaryDao diaryDao;
@@ -18,6 +20,16 @@ public class DiaryService {
 			System.out.println("다이어리 등록 성공");
 		} else {
 			System.out.println("다이어리 등록 실패");
+		}
+		
+	}
+
+
+	public void readDiaries() {
+		
+		ArrayList<String> diaries = diaryDao.getDiaries();
+		for (int i = 0; i < diaries.size(); i++) {
+			System.out.println(diaries.get(i));
 		}
 		
 	}

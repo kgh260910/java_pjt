@@ -35,6 +35,8 @@ public class DiaryController {
 				break;
 				
 			case 2:
+				
+				diaryService.readDiaries();
 				break;
 				
 			case 99:
