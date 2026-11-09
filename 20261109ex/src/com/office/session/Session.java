@@ -21,18 +21,18 @@ public class Session {
 		return session;
 	}
 
-	// attribute 객체를 가져오는 메서드 (getter)
+	// attributies 객체를 가져오는 메서드 (getter)
 	public HashMap<String, Object> getAttributies() {
 		return attributies;
 	}
 	
 	
-	// attribute에 값을 추가하는 메서드 (setter가 아니다!!!)
+	// attributies에 값을 추가하는 메서드 (setter가 아니다!!!)
 	public void setAttribute(String name, Object object) {
 		attributies.put(name, object);
 	}
 	
-	// attribute에 키값을 넣어 키-밸류 값을 삭제하는 메서드
+	// attributies에 키값을 넣어 키-밸류 값을 삭제하는 메서드
 	public void removeAttribute(String name) {
 		attributies.remove(name);
 	}

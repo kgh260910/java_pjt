@@ -53,14 +53,14 @@ public class MemberController {
 													new MemberDto(memId, memPw, null, null));
 			
 			//로그인 성공
-			if (signInedMemberDto != null) {
-				System.out.println("SIGN-UP SUCCESS!!");
-				Session.getInstance().setAttribute("signInedMemberId", signInedMemberDto.getMemId());
-			
-			//로그인 실패
-			} else {
-				System.out.println("SIGN-UP FAIL!!");
-			}
+//			if (signInedMemberDto != null) {
+//				System.out.println("SIGN-UP SUCCESS!!");
+//				Session.getInstance().setAttribute("signInedMemberId", signInedMemberDto.getMemId());
+//			
+//			//로그인 실패
+//			} else {
+//				System.out.println("SIGN-UP FAIL!!");
+//			}
 			
 			break;
 			

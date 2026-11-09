@@ -28,7 +28,7 @@ public class MemberDao {
 		HashMap<String, MemberDto> members = diaryDb.getMembers();
 		members.put(memberDto.getMemId(), memberDto);
 		
-//		put값을 반환받기 위해 즉시 =(할당연산자)를 쓰게 되면 이전값이 반환되어서 null이 된다. => 이 방법은 사용하지 않는다.
+//put값을 반환받기 위해 즉시 =(할당연산자)를 쓰게 되면 이전값이 반환되어서 null이 된다. => 이 방법은 사용하지 않는다.
 //		MemberDto memberDto2 = members.put(memberDto.getMemId(), memberDto);
 		
 		return members.get(memberDto.getMemId()) != null
