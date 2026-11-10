@@ -23,7 +23,7 @@ public class Menu {
 	// 객체생성하려니 코드가 많아 static으로 간단히 호출하도록 설정
 	static public void generateMenu() {
 		
-		// 세션으로부터 HashMap객체인 attributies 가져왔다.			
+		// 세션으로부터 			
 		if (Session.getInstance().getAttribute(Config.SIGNED_MEMBER_ID) == null) {
 			// 로그인 하기 전 
 			System.out.println("1.SIGN-UP 2.SIGN-IN 99.SYSTEM-OUT");

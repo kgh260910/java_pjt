@@ -6,6 +6,7 @@ public class MemberDto {
 	private String memPw;
 	private String memMail;
 	private String memPhone;
+//	private boolean active = true;  // 논리적인 탈퇴시 false로 바꾼다.
 	
 	public MemberDto() {
 	}

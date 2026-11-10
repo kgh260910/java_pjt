@@ -19,5 +19,4 @@ public class Dumy {
 			Container.getInstance().getMemberService().signUp(memberDto);  // 컨테이너에서 부품가져온 후 사용
 		}
 	}
-
 }

@@ -39,6 +39,7 @@ public class MemberDao {
 	}
 	
 	
+	// 회원정보수정시 사용
 	public int updateMember(MemberDto memberDto) {
 		
 		HashMap<String, MemberDto> members = diaryDb.getMembers();
@@ -57,6 +58,16 @@ public class MemberDao {
 		HashMap<String, MemberDto> members = diaryDb.getMembers();
 		
 		return members.get(memId) != null ? members.get(memId) : null;
+	}
+
+
+	public int deleteByMemId(String memId) {
+		
+		HashMap<String, MemberDto> members = diaryDb.getMembers();
+		
+		members.remove(memId);
+		
+		return members.get(memId) == null ? MemberService.DELETE_SUCCESS : MemberService.DELETE_FAIL;
 	}
 
 }

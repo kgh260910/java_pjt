@@ -98,9 +98,20 @@ public class MemberController {
 			} else {
 				System.out.println("MEMBER UPDATE FAIL!!");
 			}
-			
 			break;
+			
 		case Menu.MEMBER_DELETE:
+			
+			int resultForDelete = memberService.delete(
+					String.valueOf(Session.getInstance().getAttribute(Config.SIGNED_MEMBER_ID)));
+			
+			if (resultForDelete == MemberService.DELETE_SUCCESS) {
+				System.out.println("Member DELETE SUCCESS!!");
+				Session.getInstance().removeAttribute(Config.SIGNED_MEMBER_ID);  // 세션 제거하기
+				
+			} else {
+				System.out.println("Member DELETE FAIL!!");
+			}
 			break;
 			
 		}
