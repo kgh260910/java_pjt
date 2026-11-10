@@ -1,5 +1,8 @@
 package com.office.diary;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.office.db.DiaryDb;
 
 public class DiaryDao {
@@ -8,6 +11,24 @@ public class DiaryDao {
 	
 	public DiaryDao(DiaryDb diaryDb) {
 		this.diaryDb = diaryDb;
+	}
+
+	public int insertNewDiary(String memId, DiaryDto diaryDto) {
+		
+		HashMap<String, ArrayList<DiaryDto>> diaries = diaryDb.getDiaries();
+		
+		ArrayList<DiaryDto> myDiaries = diaries.get(memId);
+		
+		if (myDiaries == null)   // 최초로 다이어리를 사용할 때는 null이다.
+			myDiaries = new ArrayList<DiaryDto>();
+		
+		int beforeSize = myDiaries.size();
+		
+		myDiaries.add(0, diaryDto);
+		
+		int afterSize = myDiaries.size();
+			
+		return afterSize - beforeSize >= 1 ? DiaryService.DIARY_WRITE_SUCCESS : DiaryService.DIARY_WRITE_FAIL;
 	}
 
 }

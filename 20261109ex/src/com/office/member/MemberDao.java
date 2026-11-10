@@ -60,7 +60,7 @@ public class MemberDao {
 		return members.get(memId) != null ? members.get(memId) : null;
 	}
 
-
+	// 회원탈퇴시 사용
 	public int deleteByMemId(String memId) {
 		
 		HashMap<String, MemberDto> members = diaryDb.getMembers();
