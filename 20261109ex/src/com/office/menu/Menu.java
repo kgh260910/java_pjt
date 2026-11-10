@@ -2,6 +2,7 @@ package com.office.menu;
 
 import java.util.HashMap;
 
+import com.office.config.Config;
 import com.office.session.Session;
 
 public class Menu {
@@ -24,7 +25,7 @@ public class Menu {
 		
 		// 세션으로부터 HashMap객체인 attributies 가져왔다.
 		HashMap<String, Object> attributies =  Session.getInstance().getAttributies();
-		Object object = attributies.get("signInedMemberId");   		// !null or null
+		Object object = attributies.get(Config.SIGNED_MEMBER_ID);   		// !null or null
 					
 		if (object == null) {
 			// 로그인 하기 전 

@@ -2,6 +2,7 @@ package com.office.member;
 
 import java.util.Scanner;
 
+import com.office.config.Config;
 import com.office.menu.Menu;
 import com.office.session.Session;
 
@@ -55,7 +56,7 @@ public class MemberController {
 			//로그인 성공
 			if (signInedMemberDto != null) {
 				System.out.println("SIGN-UP SUCCESS!!");
-				Session.getInstance().setAttribute("signInedMemberId", signInedMemberDto.getMemId());
+				Session.getInstance().setAttribute(Config.SIGNED_MEMBER_ID, signInedMemberDto.getMemId());
 			
 			//로그인 실패
 			} else {
