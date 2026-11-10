@@ -44,6 +44,44 @@ public class Container {
 		}
 		return container;
 	}
+
+
+	public HomeController getHomeController() {
+		return homeController;
+	}
+
+
+	public MemberController getMemberController() {
+		return memberController;
+	}
+
+
+	public MemberService getMemberService() {
+		return memberService;
+	}
+
+
+	public MemberDao getMemberDao() {
+		return memberDao;
+	}
+
+
+	public DiaryController getDiaryController() {
+		return diaryController;
+	}
+
+
+	public DiaryService getDiaryService() {
+		return diaryService;
+	}
+
+
+	public DiaryDao getDiaryDao() {
+		return diaryDao;
+	}
+	
+	
+	
 	
 
 }
