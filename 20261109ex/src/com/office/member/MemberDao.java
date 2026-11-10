@@ -37,6 +37,19 @@ public class MemberDao {
 				: 
 				MemberService.SIGN_UP_FAIL;
 	}
+	
+	
+	public int updateMember(MemberDto memberDto) {
+		
+		HashMap<String, MemberDto> members = diaryDb.getMembers();
+		members.put(memberDto.getMemId(), memberDto);
+		
+		return members.get(memberDto.getMemId()) != null
+				?
+				MemberService.MODIFY_SUCCESS
+				: 
+				MemberService.MODIFY_FAIL;
+	}
 
 	// 로그인시 중복 확인
 	public MemberDto selectedMemberByMemId(String memId) {

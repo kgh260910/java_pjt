@@ -21,9 +21,9 @@ public class Session {
 		return session;
 	}
 
-	// attributies 객체를 가져오는 메서드 (getter)
-	public HashMap<String, Object> getAttributies() {
-		return attributies;
+	// attributies 객체를 가져오는 메서드 (getter) -> 해쉬맵이 불필요하여 수정
+	public Object getAttribute(String name) {
+		return attributies.get(name);
 	}
 	
 	
