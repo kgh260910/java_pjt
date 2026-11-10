@@ -29,8 +29,4 @@ public class DiaryDto {
 		this.diaryBody = diaryBody;
 	}
 	
-	
-	
-	
-
 }
