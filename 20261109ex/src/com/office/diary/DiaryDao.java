@@ -19,8 +19,10 @@ public class DiaryDao {
 		
 		ArrayList<DiaryDto> myDiaries = diaries.get(memId);
 		
-		if (myDiaries == null)   // 최초로 다이어리를 사용할 때는 null이다.
+		if (myDiaries == null) {   // 최초로 다이어리를 사용할 때는 null이다.
 			myDiaries = new ArrayList<DiaryDto>();
+			diaries.put(memId, myDiaries);
+		}
 		
 		int beforeSize = myDiaries.size();
 		
@@ -30,5 +32,16 @@ public class DiaryDao {
 			
 		return afterSize - beforeSize >= 1 ? DiaryService.DIARY_WRITE_SUCCESS : DiaryService.DIARY_WRITE_FAIL;
 	}
+
+	public ArrayList<DiaryDto> selectDiariesByMemId(String memId) {
+		
+		HashMap<String, ArrayList<DiaryDto>> diaries = diaryDb.getDiaries();
+		
+		return diaries.get(memId);
+
+	}
+
+	
+
 
 }

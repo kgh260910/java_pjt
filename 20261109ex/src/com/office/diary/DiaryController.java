@@ -1,5 +1,6 @@
 package com.office.diary;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.office.config.Config;
@@ -44,6 +45,24 @@ public class DiaryController {
 			break;
 			
 		case Menu.DIARY_READ:
+			
+			ArrayList<DiaryDto> myDiaries = diaryService.readDiaries(
+					String.valueOf(Session.getInstance().getAttribute(Config.SIGNED_MEMBER_ID)));
+			
+			if (myDiaries != null) {
+				
+				for(int i = 0; i < myDiaries.size(); i++) {
+					DiaryDto dto = myDiaries.get(i);
+					System.out.println("------------------------------------------");
+					System.out.println("Title: " + dto.getDiaryTitle());
+					System.out.println("Body: " + dto.getDiaryBody());
+					System.out.println("------------------------------------------");
+				}
+				
+			} else {
+				System.out.println("작성된 일기가 없어요.");
+			}
+			
 			break;
 		}
 		
