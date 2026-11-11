@@ -15,15 +15,17 @@ public class MainClass {
 		 * 			catch (Exception e) {...} : 처리할 내용을 코딩한다.
 		 */
 		try {
-			System.out.println("num1 / num2 = " + (num1 / num2));  // exception 발생
-		
-		} catch (Exception e) {    // e = JVM에서 만든 익셉션 객체
+			System.out.println("num1 / num2 = " + (num1 / num2));  // exception 발생, catch쪽으로 넘어간다.
+			System.out.println("num1 * num2 = " + (num1 * num2));  // 실행되지 않음
+			
+		} catch (NullPointerException e) {    // e = JVM에서 만든 익셉션 객체
 			System.out.println(e.getMessage());      //   / by zero
 			e.printStackTrace();                  // 디테일하게 예외를 보여줍니다.
+		} catch (ArithmeticException e) {     // 여러개의 catch를 사용해서 예외처리가 가능합니다.
+			e.printStackTrace();
 		}
 		
 		System.out.println("num1 - num2 = " + (num1 - num2));  // 10
-		System.out.println("num1 / num2 = " + (num1 / num2));
 		System.out.println("num1 * num2 = " + (num1 * num2));  // 0
 		
 		
