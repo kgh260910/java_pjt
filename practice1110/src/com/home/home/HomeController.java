@@ -1,6 +1,9 @@
 package com.home.home;
 
+import java.util.HashMap;
 import java.util.Scanner;
+
+import com.home.session.Session;
 
 public class HomeController {
 
@@ -11,7 +14,7 @@ public class HomeController {
 		
 		while (systemFlag) {
 			
-			//계속
+			
 		}
 		
 	}
