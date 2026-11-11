@@ -3,6 +3,7 @@ package com.home.home;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import com.home.Container;
 import com.home.menu.Menu;
 import com.home.session.Session;
 
@@ -16,6 +17,28 @@ public class HomeController {
 		while (systemFlag) {
 			
 			Menu.generateMenu();
+			
+			int selectedMenu = scanner.nextInt();
+			switch (selectedMenu) {
+			
+			case Menu.MEMBER_SIGN_UP:
+			case Menu.MEMBER_SIGN_IN:
+			case Menu.MEMBER_SIGN_OUT:
+			case Menu.MEMBER_MODIFY:
+			case Menu.MEMBER_DELETE:
+				
+				Container.getInstance().getMemberController().execute(scanner, selectedMenu);
+				break;
+			
+			case Menu.DIARY_WRITE:
+			case Menu.DIARY_READ:
+				Container.getInstance().getDiaryController().execute(scanner, selectedMenu);
+				break;
+				
+			case Menu.SYSTEM_OUT:
+				systemFlag = false;
+				System.out.println("시스템종료");
+			}
 			
 			
 		}
