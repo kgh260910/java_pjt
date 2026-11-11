@@ -6,6 +6,17 @@ import com.home.session.Session;
 
 public class Menu {
 	
+	final public static int MEMBER_SIGN_UP = 1;
+	final public static int MEMBER_SIGN_IN = 2;
+	final public static int MEMBER_SIGN_OUT = 3;
+	final public static int MEMBER_MODIFY = 4;
+	final public static int MEMBER_DELETE = 5;
+	
+	final public static int DIARY_WRITE = 6;
+	final public static int DIARY_READ = 7;
+	
+	final public static int SYSTEM_OUT = 99;
+	
 	static public void generateMenu() {
 		
 		HashMap<String, Object> attributies = Session.getInstance().getAttributies();
