@@ -34,6 +34,13 @@ public class MemberDao {
 				:
 				MemberService.SIGN_UP_FAIL;
 	}
+
+	public MemberDto selectedMemberByMemId(String memId) {
+		
+		Map<String, MemberDto> members = diaryDb.getMembers();
+		
+		return members.get(memId) != null ? members.get(memId) : null;
+	}
 	
 
 

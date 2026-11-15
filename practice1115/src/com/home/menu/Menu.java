@@ -2,6 +2,7 @@ package com.home.menu;
 
 import java.util.HashMap;
 
+import com.home.Config;
 import com.home.session.Session;
 
 public class Menu {
@@ -20,7 +21,7 @@ public class Menu {
 	static public void generateMenu() {
 		
 		HashMap<String, Object> attributies = Session.getInstance().getAttributies();
-		Object object = attributies.get("signInedMemberId");
+		Object object = attributies.get(Config.SIGNED_MEMBER_ID);
 		
 		if (object == null) {
 			System.out.println("1.SIGN-UP 2.SIGN-IN 99.SYSTEM-OUT");

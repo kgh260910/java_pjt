@@ -22,4 +22,23 @@ public class MemberService {
 		
 	}
 
+	// 로그인
+	public MemberDto signIn(MemberDto memberDto) {
+		
+		MemberDto selectedMemberDto =
+				memberDao.selectedMemberByMemId(memberDto.getMemId());
+		
+		// 아이디확인 && 비밀번호 확인
+		if (selectedMemberDto != null
+				&& 
+				selectedMemberDto.getMemPw().equals(selectedMemberDto.getMemPw())) {
+			return selectedMemberDto;
+		}
+		
+		else {
+			return null;
+		}
+		
+	}
+
 }
