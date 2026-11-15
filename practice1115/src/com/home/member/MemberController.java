@@ -33,6 +33,12 @@ public class MemberController {
 			MemberDto memberDto = new MemberDto(memId, memPw, memMail, memPhone);
 			int resultForSignUp = memberService.signUp(memberDto);
 			
+			if (resultForSignUp == MemberService.SIGN_UP_SUCCESS) {
+				System.out.println("SIGN-UP SUCCESS!!");
+			} else {
+				System.out.println("SIGN-UP FAIL!!");
+			}
+			
 			
 		}
 		
