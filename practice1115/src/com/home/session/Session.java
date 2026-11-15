@@ -20,8 +20,8 @@ public class Session {
 	}
 
 	// getter
-	public HashMap<String, Object> getAttributies() {
-		return attributies;
+	public Object getAttributies(String name) {
+		return attributies.get(name);
 	}
 	
 	public void setAttribute(String name, Object object) {
@@ -31,10 +31,6 @@ public class Session {
 	// 삭제하는 메서드
 	public void removeAttribute(String name) {
 		attributies.remove(name);
-	}
-	
-	
-	
-	
+	}	
 
 }

@@ -41,6 +41,18 @@ public class MemberDao {
 		
 		return members.get(memId) != null ? members.get(memId) : null;
 	}
+
+	public int updateMember(MemberDto memberDto) {
+		
+		Map<String, MemberDto> members = diaryDb.getMembers();
+		members.put(memberDto.getMemId(), memberDto);
+		
+		return members.get(memberDto.getMemId()) != null
+				?
+				MemberService.MODIFY_SUCCESS
+				:
+				MemberService.MODIFY_FAIL;
+	}
 	
 
 

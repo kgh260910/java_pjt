@@ -20,6 +20,13 @@ public class Menu {
 	
 	static public void generateMenu() {
 		
+		if (Session.getInstance().getAttributies(Config.SIGNED_MEMBER_ID) == null) {
+			System.out.println("1.SIGN-UP 2.SIGN-IN 99.SYSTEM-OUT");
+		} else {
+			System.out.println("3.SIGN-OUT 4.MODIFY 5.DELETE 6.DIARY-WRITE 7.DIARY-READ 99.SYSTEM-OUT");
+		}
+		/*
+		 * Session의 해쉬맵getter를 수정해서 정상적으로 실행이 되지 않는다.
 		HashMap<String, Object> attributies = Session.getInstance().getAttributies();
 		Object object = attributies.get(Config.SIGNED_MEMBER_ID);
 		
@@ -27,7 +34,9 @@ public class Menu {
 			System.out.println("1.SIGN-UP 2.SIGN-IN 99.SYSTEM-OUT");
 		} else {
 			System.out.println("3.SIGN-OUT 4.MODIFY 5.DELETE 6.DIARY-WRITE 7.DIARY-READ 99.SYSTEM-OUT");
-		}	
+		}
+		*/
+		
 	}
 
 }

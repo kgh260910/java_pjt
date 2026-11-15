@@ -57,6 +57,42 @@ public class MemberController {
 				System.out.println("SIGN-UP FAIL!!");
 			}
 			break;
+			
+		case Menu.MEMBER_SIGN_OUT:
+
+			Session.getInstance().removeAttribute(Config.SIGNED_MEMBER_ID);
+			
+		case Menu.MEMBER_MODIFY:
+			
+			MemberDto signInedMember = memberService.getMember();
+			
+			System.out.println("MemberID: " + signInedMember.getMemId());
+			System.out.println("MemberPW: " + signInedMember.getMemPw());
+			System.out.println("MemberMAIL: " + signInedMember.getMemMail());
+			System.out.println("MemberPHONE: " + signInedMember.getMemPhone());
+			
+			System.out.println("Input member new PW!!");
+			memPw = scanner.next();
+			System.out.println("Input member new MAIL!!");
+			memMail = scanner.next();
+			System.out.println("Input member new PHONE!!");
+			memPhone = scanner.next();
+			
+			int resultForModify = memberService.modify(new MemberDto(
+					String.valueOf(Session.getInstance().getAttributies(Config.SIGNED_MEMBER_ID)),
+					memPw,
+					memMail,
+					memPhone));
+			
+			if (resultForModify == MemberService.MODIFY_SUCCESS) {
+				System.out.println("MEMBER UPDATE SUCCESS!!");
+			} else {
+				System.out.println("MEMBER UPDATE FAIL!!");
+			}
+			
+			
+			
+			
 		}
 		
 	}
