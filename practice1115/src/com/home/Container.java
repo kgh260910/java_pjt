@@ -1,5 +1,9 @@
 package com.home;
 
+import com.home.db.DiaryDb;
+import com.home.diary.DiaryController;
+import com.home.diary.DiaryDao;
+import com.home.diary.DiaryService;
 import com.home.home.HomeController;
 import com.home.member.MemberController;
 import com.home.member.MemberDao;
@@ -15,13 +19,21 @@ public class Container {
 	final private MemberService memberService;
 	final private MemberDao memberDao;
 	
+	final private DiaryController diaryController;
+	final private DiaryService diaryService;
+	final private DiaryDao diaryDao;
+	
 	private Container() {
 		
 		homeController = new HomeController();
 		
-		memberDao = new MemberDao();
+		memberDao = new MemberDao(DiaryDb.getInstance());
 		memberService = new MemberService(memberDao);
 		memberController = new MemberController(memberService);
+		
+		diaryDao = new DiaryDao(DiaryDb.getInstance());
+		diaryService = new DiaryService(diaryDao);
+		diaryController = new DiaryController(diaryService);
 		
 	}
 	
@@ -31,6 +43,37 @@ public class Container {
 		}
 		return container;
 	}
+
+	public HomeController getHomeController() {
+		return homeController;
+	}
+
+	public MemberController getMemberController() {
+		return memberController;
+	}
+
+	public MemberService getMemberService() {
+		return memberService;
+	}
+
+	public MemberDao getMemberDao() {
+		return memberDao;
+	}
+
+	public DiaryController getDiaryController() {
+		return diaryController;
+	}
+
+	public DiaryService getDiaryService() {
+		return diaryService;
+	}
+
+	public DiaryDao getDiaryDao() {
+		return diaryDao;
+	}
+	
+	
+	
 	
 
 }
