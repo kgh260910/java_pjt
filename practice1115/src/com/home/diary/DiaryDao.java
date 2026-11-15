@@ -37,4 +37,11 @@ public class DiaryDao {
 				DiaryService.DIARY_WRITE_FAIL;
 	}
 
+	public ArrayList<DiaryDto> selectDiariesByMemId(String memId) {
+		
+		Map<String, ArrayList<DiaryDto>> diaries = diaryDb.getDiaries();
+		
+		return diaries.get(memId);
+	}
+
 }

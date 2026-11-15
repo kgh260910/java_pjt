@@ -1,5 +1,7 @@
 package com.home.diary;
 
+import java.util.ArrayList;
+
 public class DiaryService {
 	
 	final private DiaryDao diaryDao;
@@ -14,6 +16,11 @@ public class DiaryService {
 	public int writeDiary(String memId, DiaryDto diaryDto) {
 		
 		return diaryDao.insertNewDiary(memId, diaryDto);
+	}
+
+	public ArrayList<DiaryDto> readDiaries(String memId) {
+		
+		return diaryDao.selectDiariesByMemId(memId);
 	}
 
 }
