@@ -53,6 +53,19 @@ public class MemberDao {
 				:
 				MemberService.MODIFY_FAIL;
 	}
+
+	public int deleteByMemId(String memId) {
+		
+		Map<String, MemberDto> members = diaryDb.getMembers();
+		
+		members.remove(memId);
+		
+		return members.get(memId) == null 
+				? 
+				MemberService.DELETE_SUCCESS
+				:
+				MemberService.DELETE_FAIL;
+	}
 	
 
 

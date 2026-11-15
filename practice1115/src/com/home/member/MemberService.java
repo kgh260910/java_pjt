@@ -9,6 +9,8 @@ public class MemberService {
 	final public static int SIGN_UP_FAIL = 0;
 	final public static int MODIFY_SUCCESS = 1;
 	final public static int MODIFY_FAIL = 0;
+	public static int DELETE_SUCCESS = 1;
+	public static int DELETE_FAIL = 0;
 	final private MemberDao memberDao;
 
 	public MemberService(MemberDao memberDao) {
@@ -55,6 +57,11 @@ public class MemberService {
 	public int modify(MemberDto memberDto) {
 		
 		return memberDao.updateMember(memberDto);
+	}
+
+	public int delete(String memId) {
+		
+		return memberDao.deleteByMemId(memId);
 	}
 
 }
